@@ -187,28 +187,29 @@ const cp = __webpack_require__(954).cp;
   try {
     const token = core.getInput('access-token');
     const url = `https:/${token}@github.com/${github.context.repo.owner}/${github.context.repo.repo}.git`;
+    const directory = './__sapper__export';
 
     await exec('npm install');
     await exec('npm run export');
-    await cp('./CNAME', './__sapper__/export/CNAME', { force: true });
+    await cp('./CNAME', `${directory}/CNAME`, { force: true });
 
-    await exec('git init', [], { cwd: './__sapper__/export' });
+    await exec('git init', [], { cwd: directory });
     await exec('git config user.name', [github.context.actor], {
-      cwd: './__sapper__/export'
+      cwd: directory
     });
     await exec(
       'git config user.email',
       [`${github.context.actor}@users.noreply.github.com`],
-      { cwd: './__sapper__/export' }
+      { cwd: directory }
     );
-    await exec('git add', ['.'], { cwd: './__sapper__/export ' });
+    await exec('git add', ['.'], { cwd: directory });
     await exec(
       'git commit',
       ['-m', `Deploy via Sapper Publish Action for ${github.context.sha}`],
-      { cwd: './__sapper__/export' }
+      { cwd: directory }
     );
     await exec('git push', ['-f', url, 'master:master'], {
-      cwd: './__sapper__/export'
+      cwd: directory
     });
   } catch (error) {
     console.error('Could not complete deployment!');
