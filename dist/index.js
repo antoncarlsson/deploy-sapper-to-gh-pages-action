@@ -185,7 +185,10 @@ const cp = __webpack_require__(954).cp;
 
 (async () => {
   try {
-    const token = core.getInput('access-token');
+    const token = core.getInput('ACCESS_TOKEN');
+    if (!token) {
+      throw new Error('No access token found!');
+    }
     const url = `https:/${token}@github.com/${github.context.repo.owner}/${github.context.repo.repo}.git`;
     const directory = './__sapper__/export';
 
