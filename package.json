@@ -1,0 +1,19 @@
+{
+  "name": "deploy-sapper-to-gh-pages-action",
+  "version": "1.0.0",
+  "description": "A GitHub Action for exporting and deploying a site built with Svelte and Sapper to GitHub Pages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/antoncarlsson/deploy-sapper-to-gh-pages-action.git"
+  },
+  "author": "Anton Carlsson <mail@antoncarlsson.se>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antoncarlsson/deploy-sapper-to-gh-pages-action/issues"
+  },
+  "homepage": "https://github.com/antoncarlsson/deploy-sapper-to-gh-pages-action#readme"
+}
