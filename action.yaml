@@ -1,9 +1,5 @@
 name: 'Sapper Publish'
 description: 'Export and deploy your Sapper site to GitHub Pages.'
-inputs:
-  access-token:
-    description: 'The personal access token required to deploy your site.'
-    required: true
 runs:
   using: 'node12'
   main: 'dist/index.js'

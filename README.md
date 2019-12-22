@@ -2,7 +2,7 @@
 
 A GitHub Action for exporting and deploying a site built with Svelte and Sapper to GitHub Pages.
 
-## How to use
+## Example usage
 
 ```yaml
 name: Sapper Publish
