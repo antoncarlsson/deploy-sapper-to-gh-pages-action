@@ -16,8 +16,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: antoncarlsson/deploy-sapper-to-gh-pages-action@v1
+      - uses: actions/checkout@v2
+      - uses: antoncarlsson/deploy-sapper-to-gh-pages-action@v1.1.6
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 ```
