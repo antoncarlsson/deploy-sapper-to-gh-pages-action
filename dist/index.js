@@ -187,7 +187,7 @@ const cp = __webpack_require__(954).cp;
   try {
     const token = core.getInput('access-token');
     const url = `https:/${token}@github.com/${github.context.repo.owner}/${github.context.repo.repo}.git`;
-    const directory = './__sapper__export';
+    const directory = './__sapper__/export';
 
     await exec('npm install');
     await exec('npm run export');
